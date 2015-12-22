@@ -1,0 +1,23 @@
+{
+  "name": "fs-thing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test",
+    "test:debug": "mocha debug test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mkdirp": "^0.5.1",
+    "mocha": "^2.3.4",
+    "quick-temp": "^0.1.5",
+    "rimraf": "^2.4.4"
+  },
+  "dependencies": {
+    "fs-tree-diff": "^0.4.4",
+    "walk-sync": "^0.2.6"
+  }
+}
