@@ -16,6 +16,7 @@ function FS(options) {
   this._output = options.output;
   this._dirty = {};
   this._inputTree = new FSTree();
+  this._version = 0; // increment for each FS version (rebuild);
 }
 
 FS.prototype.existsSync = function(path) {
@@ -77,6 +78,8 @@ FS.prototype.mkdirSync = function(path) {
 };
 
 FS.prototype.inputChanges = function() {
+  // TODO: this should be (when available) be seeded from the previous
+  // transform
   var entries = walkSync.entries(this._input);
   var nextTree = new FSTree.fromEntries(entries);
   var currentTree = this._inputTree;

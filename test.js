@@ -12,7 +12,6 @@ function write(fullPath, content) {
   _fs.writeFileSync(fullPath, content);
 }
 
-
 function read(fullPath) {
   return _fs.readFileSync(fullPath, 'UTF8');
 }
@@ -120,6 +119,46 @@ describe('FS', function() {
       ]);
     });
 
+/*
+    {
+      mkdir(path, entry, content) {
+
+      },
+
+      link(path, entry, content) {
+
+      },
+
+      unlink(path, entry, content) {
+
+      },
+
+      create(path, entry, content) {
+
+      },
+
+      update(path, entry, content) {
+
+      },
+    }
+
+    {
+      build(fs) {
+
+        fs.changes().forEach(function(change) {
+
+          // mkdir
+          // create
+          // update
+          // link
+          // unlink
+
+        });
+
+      }
+    }
+*/
+
     it('#readdirSync', function() {
         // TODO:
     });
@@ -158,6 +197,10 @@ describe('FS', function() {
       expect(outputChanges[0]).to.be.sameOperationAs(
         ['rmdir', 'bro', undefined]
       );
+    });
+
+    it('supports seeding inputChanges', function() {
+
     });
 
     it('#inputChanges', function() {
