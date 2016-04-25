@@ -19,6 +19,10 @@ function FS(options) {
   this._version = 0; // increment for each FS version (rebuild);
 }
 
+FS.prototype.writeIfContentChanged = function(path) {
+  throw TypeError('Implement me'); // should we do this by default, I think yes.
+};
+
 FS.prototype.existsSync = function(path) {
   return fs.existsSync(this.pathFor(path));
 };
